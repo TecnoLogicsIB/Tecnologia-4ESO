@@ -1,0 +1,26 @@
+// definició de valors constants:
+const int PinLed = 10;  // pin PWM de connexió LED
+const int temps = 100; // temps
+
+// definició de variables:
+int intensitat = 0;  // valor PWM de sortida cap al LED
+
+// configuració:
+void setup() 
+{
+    // els pins PWM no s’han de configurar
+}
+
+void loop() 
+{
+    // definició de l’encesa del LED:
+    analogWrite (PinLed, intensitat); 
+    delay (temps); 
+
+    // nou valor de la variable intensitat:
+    intensitat = intensitat + 10; 
+
+    // quan la intensitat sigui màxima (255):
+    if (intensitat > 255)
+    { intensitat = 0; }
+}
